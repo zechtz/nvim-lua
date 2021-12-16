@@ -1,5 +1,3 @@
--- switch to packer plugin manager  instead of plug
--- switch to packer plugin manager  instead of plug
 require("user.options")
 require("user.settings")
 require("user.plugins")
