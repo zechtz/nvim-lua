@@ -10,6 +10,11 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 local keymap = vim.api.nvim_set_keymap
 
+--Remap , as leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+keymap("", "<Space>", "<Nop>", opts)
+
 -- helper functions
 local function map(mode, shortcut, command)
   local opts = {}
@@ -74,3 +79,5 @@ nmap('<Leader>L', '<C-w>L')
 nmap('<Leader>J', '<C-w>J')
 nmap('<Leader>K', '<C-w>K')
 nmap('<Leader>w', '<C-w>')
+
+nmap('<Leader>e', ':NERDTreeToggle<CR>')

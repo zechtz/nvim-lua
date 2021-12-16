@@ -45,9 +45,16 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "numToStr/Comment.nvim" -- comment plugin/ instead of nerdcommenter
+  use "folke/which-key.nvim" -- never forget you key mappings again
+  use "akinsho/toggleterm.nvim" -- display termial inside vim
+  use "ahmedkhalf/project.nvim"
+  use "lewis6991/impatient.nvim"
+  use "folke/zen-mode.nvim"  -- distraction free mode for vim
+  use "goolord/alpha-nvim" -- a nice vim dashboard
 
   -- colorschemes
-  use "folke/tokyonight.nvim"
+  use "folke/tokyonight.nvim" -- a nice dark color theme
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "catppuccin/nvim"
@@ -63,8 +70,54 @@ return packer.startup(function(use)
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
 
-  -- NerdTree i still prefer this one
+  -- NerdTree i still prefer this one to nvim-tree
   use "scrooloose/nerdtree"
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  use "tom-anders/telescope-vim-bookmarks.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+
+  -- Session Manager
+  use 'Shatur/neovim-session-manager'
+
+  -- intellesense
+  use 'glepnir/lspsaga.nvim'
+
+  -- Java
+  use "mfussenegger/nvim-jdtls"
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "filipdutescu/renamer.nvim"
+  use "simrat39/symbols-outline.nvim"
+  use {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  }
+
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'} -- AI powered auto-complete
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lua"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  use "norcalli/nvim-colorizer.lua"
+  use "windwp/nvim-spectre"
+
+  use 'vim-airline/vim-airline' -- for nice status bars
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
