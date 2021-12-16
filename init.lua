@@ -1,9 +1,7 @@
 require("user.options")
 require("user.settings")
 require("user.plugins")
-
 require("user.colorscheme")
-
 require("user.tree-sitter")
 require("user.whichkey")
 require("user.comment")
