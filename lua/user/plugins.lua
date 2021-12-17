@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "folke/zen-mode.nvim"  -- distraction free mode for vim
   use "goolord/alpha-nvim" -- a nice vim dashboard
+  use "ThePrimeagen/harpoon"
 
   -- colorschemes
   use "folke/tokyonight.nvim" -- a nice dark color theme
@@ -59,6 +60,24 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "catppuccin/nvim"
   use "rose-pine/neovim"
+  use "sonph/onehalf"
+  use "joshdick/onedark.vim"
+  use 'morhetz/gruvbox'
+  use 'altercation/vim-colors-solarized'
+  use 'antlypls/vim-colors-codeschool'
+  use 'tomasr/molokai'
+  use 'jpo/vim-railscasts-theme'
+  use 'gosukiwi/vim-atom-dark'
+  use 'trevordmiller/nova-vim'
+  use 'ayu-theme/ayu-vim'
+  use 'gregsexton/Atom'
+  use 'endel/vim-github-colorscheme'
+  use 'connorholyday/vim-snazzy'
+  use 'lifepillar/vim-solarized8'
+  use 'arcticicestudio/nord-vim'
+  use 'whatyouhide/vim-gotham'
+  use 'NLKNguyen/papercolor-theme'
+  use 'EdenEast/nightfox.nvim'
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
@@ -113,6 +132,9 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- emmet AKA zen coding
+  use 'mattn/emmet-vim'
 
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"

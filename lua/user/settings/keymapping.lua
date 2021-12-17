@@ -71,7 +71,7 @@ end
 
 -- navigation through splits and resize the current split
 nmap('<Leader>hh', '<C-w>h')
-nmap('<Leader>ll', '<C-w>l')
+noremap('<Leader>ll', '<C-w>l')
 nmap('<Leader>jj', '<C-w>j')
 nmap('<Leader>kk', '<C-w>k')
 nmap('<Leader>H', '<C-w>H')
@@ -125,16 +125,16 @@ imap('<Leader>[', '<Esc>')
 
 -- Indents html on save and takes you to the top of the page
 vim.cmd([[
-  autocmd BufRead,BufWritePre *.html normal gg=G
-  autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
- autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+autocmd BufRead,BufWritePre *.html normal gg=G
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 ]])
 
 -------------------------------------------------------------------'
 -- map ctrl + c keys to autocomplete using emmet
 -------------------------------------------------------------------'
-imap('<Leader>c', '<c-y>,')
-imap('<Leader>w', '<c-y>,')
+imap('<Leader>c', '<c-y>')
+vmap('<Leader>w', '<c-y>')
 
 -----------------------------------------------------------------'
 -- Insert a hash rocket with <c-l> saves lots of time when writing ruby hashes, go channels etc
@@ -188,6 +188,9 @@ noremap('<silent> <C-p>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 vim.api.nvim_command([[
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 ]])
 
 -- " NOTE: You can use other key to expand snippet.
@@ -195,11 +198,11 @@ cnoremap("<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"')
 cnoremap("<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"')
 
 -- Expand
-inoremap('<C-j>', 'vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"')
+inoremap('<C-z>', 'vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"')
 snoremap('<C-j>', 'vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"')
 
 -- Expand or jump
-inoremap('<C-l>',  'vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-l>"')
+inoremap('<C-n>',  'vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-l>"')
 snoremap('<C-l>',  'vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-l>"')
 
 --  Jump forward or backward

@@ -16,7 +16,7 @@ lsp_installer.on_server_ready(function(server)
 	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	 end
 
-	 if server.name == "sumneko" then
+	 if server.name == "sumneko_lua" then
 	 	local sumneko_opts = require("user.lsp.settings.sumneko")
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	 end

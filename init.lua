@@ -1,7 +1,6 @@
 require("user.options")
 require("user.settings")
 require("user.plugins")
-require("user.colorscheme")
 require("user.tree-sitter")
 require("user.whichkey")
 require("user.comment")
@@ -16,3 +15,9 @@ require("user.lsp")
 require("user.autocmd")
 require("user.colorizer")
 require("user.spectre")
+require("user.dap")
+require("user.autopairs")
+require("user.cmp")
+
+-- color schemes
+require("user.themes.tokyostorm")

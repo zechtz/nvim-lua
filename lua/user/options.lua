@@ -10,14 +10,14 @@ local options = {
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  showtabline = 0,                         -- always hide tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   incsearch = true,
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
-  -- termguicolors = true,                    -- set term gui colors (most terminals support this)
+  termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 1000,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
@@ -33,27 +33,18 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-
   encoding="utf-8",
-  shell="/bin/fish",
-
+  shell="/bin/fish",                        -- set shell option to fish shell
   autowriteall = true,
   exrc = true,
   lazyredraw = true,
-  clipboard="unnamed",
   wildmenu = true,
-  backupdir="~/.config/nvim/backups",
-  directory="~/.config/nvim/swaps",
   undolevels=10000,
   undoreload=10000,
   undodir="~/.config/nvim/undo",
   backupskip="/tmp/*,/private/tmp/*",
-  expandtab = true,
-  shiftwidth=2,
   softtabstop=2,
   autoindent = true,
-  smartindent = true,
-  tabstop=2,
   guifont="Fira\\ Code:h12",
 }
 
@@ -63,6 +54,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd([[
+  set showtabline=0
+]])
