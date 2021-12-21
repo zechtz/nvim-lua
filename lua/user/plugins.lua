@@ -102,6 +102,13 @@ return packer.startup(function(use)
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
 
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+  use "f-person/git-blame.nvim"
+  use "ruifm/gitlinker.nvim"
+  use "mattn/vim-gist"
+  use "mattn/webapi-vim"
+
   -- NerdTree i still prefer this one to nvim-tree
   use "scrooloose/nerdtree"
 

@@ -63,15 +63,15 @@ end
 --   command_mode = "c",
 
 -- navigation through splits and resize the current split
-nmap(',hh', '<C-w>h')
-noremap(',ll', '<C-w>l')
-nmap(',jj', '<C-w>j')
-nmap(',kk', '<C-w>k')
-nmap(',H', '<C-w>H')
-nmap(',L', '<C-w>L')
-nmap(',J', '<C-w>J')
-nmap(',K', '<C-w>K')
-nmap(',w', '<C-w>')
+nmap('<Space>hh', '<C-w>h')
+nmap('<Space>ll', '<C-w>l')
+nmap('<Space>jj', '<C-w>j')
+nmap('<Space>kk', '<C-w>k')
+nmap('<Space>H', '<C-w>H')
+nmap('<Space>L', '<C-w>L')
+nmap('<Space>J', '<C-w>J')
+nmap('<Space>K', '<C-w>K')
+nmap('<Space>w', '<C-w>')
 
 nmap('<Leader>s', ':NERDTreeToggle<CR>')
 nmap('<Leader><Space', ':noh<CR>')
