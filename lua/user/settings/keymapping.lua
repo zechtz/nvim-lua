@@ -1,23 +1,16 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
-local keymap = vim.api.nvim_set_keymap
-
 --Remap , as leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+keymap("", ",", "<Nop>", opts)
 
 -- helper functions
 local function map(mode, shortcut, command)
-  local opts = {}
+  opts = {}
   vim.api.nvim_set_keymap(mode, shortcut, command, opts)
 end
 
@@ -30,22 +23,22 @@ local function imap(shortcut, command)
 end
 
 local function snoremap(shortcut, command)
-  local opts = {noremap = true, silent = true, expr = true}
+  opts = {noremap = true, silent = true, expr = true}
   keymap('s', shortcut, command, opts)
 end
 
 local function inoremap(shortcut, command)
-  local opts = {noremap = true, silent = true, expr = true}
+  opts = {noremap = true, silent = true, expr = true}
   keymap('i', shortcut, command, opts)
 end
 
 local function cnoremap(shortcut, command)
-  local opts = {noremap = true, expr = true}
+  opts = {noremap = true, expr = true}
   keymap('c', shortcut, command, opts)
 end
 
 local function vnoremap(shortcut, command)
-  local opts = {noremap = true, expr = true}
+  opts = {noremap = true, expr = true}
   keymap('v', shortcut, command, opts)
 end
 
@@ -70,20 +63,24 @@ end
 --   command_mode = "c",
 
 -- navigation through splits and resize the current split
-nmap('<Leader>hh', '<C-w>h')
-noremap('<Leader>ll', '<C-w>l')
-nmap('<Leader>jj', '<C-w>j')
-nmap('<Leader>kk', '<C-w>k')
-nmap('<Leader>H', '<C-w>H')
-nmap('<Leader>L', '<C-w>L')
-nmap('<Leader>J', '<C-w>J')
-nmap('<Leader>K', '<C-w>K')
-nmap('<Leader>w', '<C-w>')
+nmap(',hh', '<C-w>h')
+noremap(',ll', '<C-w>l')
+nmap(',jj', '<C-w>j')
+nmap(',kk', '<C-w>k')
+nmap(',H', '<C-w>H')
+nmap(',L', '<C-w>L')
+nmap(',J', '<C-w>J')
+nmap(',K', '<C-w>K')
+nmap(',w', '<C-w>')
 
-nmap('<Leader>e', ':NERDTreeToggle<CR>')
+nmap('<Leader>s', ':NERDTreeToggle<CR>')
+nmap('<Leader><Space', ':noh<CR>')
 
 -- Open the current file in the default program
 nmap('<Leader>x', ':!xdg-open %<CR><CR>')
+
+nmap('<Space>', ':')
+vmap('<Space>', '<Esc>')
 
 -- Allow gf to open non-existent file
 nmap('gf', ':edit <cfile><CR>')
@@ -95,12 +92,19 @@ nmap('<Leader>xx', '<c-x>')
 nmap('<Leader>dd', '<c-x>')
 nmap('<Leader>ff', '<c-x><c-f>')
 
+nmap(',//', 'gcc')
+vmap(',//', 'gc')
+nmap(',cc', 'gcc')
+vmap(',cc', 'gc')
+
 nmap('<Leader>aa', '<c-x><c-o>')
 nmap('<Leader>gss', '<C-j>a')
 
 -- Map ctrl+H to Leader HH for Vertical & Horizontal splits
 nmap('<Leader>HH', '<C-w>H')
 nmap('<Leader>LL', '<C-w>L')
+
+nmap('<Leader>tr', ':TroubleToggle<CR>')
 
 -- Map ctrl+H to Leader HH for Vertical & Horizontal splits
 nmap('<Leader>WW', '<C-w>K')

@@ -70,18 +70,18 @@ local setup = {
 }
 
 local opts = {
-  mode = "n", -- normal mode
+  mode = "n", -- NORMAL mode
   prefix = "<leader>",
-  buffer = nil, -- global mappings. Specify a buffer number for buffer local mappings
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
 
 local m_opts = {
-  mode = "n", -- normal mode
+  mode = "n", -- NORMAL mode
   prefix = "m",
-  buffer = nil, -- global mappings. Specify a buffer number for buffer local mappings
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
@@ -108,12 +108,12 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["e"] = { "<cmd>NERDTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  -- ["w"] = { "<cmd>w!<CR>", "Save" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
-  ["c"] = { "<cmd>Bdelete! %d<CR>", "Close Buffer" },
+  -- ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
+  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
@@ -208,6 +208,7 @@ local mappings = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    -- f = { "<cmd>Telescope find_files<cr>", "Find File" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
     i = { "<cmd>Telescope media_files<cr>", "Media" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
@@ -228,6 +229,10 @@ local mappings = {
 
   t = {
     name = "Terminal",
+    -- ["1"] = { ":1ToggleTerm<cr>", "1" },
+    -- ["2"] = { ":2ToggleTerm<cr>", "2" },
+    -- ["3"] = { ":3ToggleTerm<cr>", "3" },
+    -- ["4"] = { ":4ToggleTerm<cr>", "4" },
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
@@ -245,16 +250,17 @@ local mappings = {
 }
 
 local vopts = {
-  mode = "v", -- visual mode
+  mode = "v", -- VISUAL mode
   prefix = "<leader>",
-  buffer = nil, -- global mappings. Specify a buffer number for buffer local mappings
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-  ["/"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+  ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
 }
+
 
 which_key.setup(setup)
 which_key.register(mappings, opts)

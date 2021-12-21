@@ -57,3 +57,5 @@ end
 vim.cmd([[
   set showtabline=0
 ]])
+
+vim.lsp.set_log_level("debug")

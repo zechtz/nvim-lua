@@ -7,7 +7,7 @@ function GetCWD()
 end
 
 function IsHelp()
-  if buftype=='help' then return vim.call('help') else return ':' end
+  if vim.buftype=='help' then return vim.call('help') else return ':' end
 end
 
 function GetName()

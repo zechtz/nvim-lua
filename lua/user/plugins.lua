@@ -53,6 +53,12 @@ return packer.startup(function(use)
   use "folke/zen-mode.nvim"  -- distraction free mode for vim
   use "goolord/alpha-nvim" -- a nice vim dashboard
   use "ThePrimeagen/harpoon"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use "rcarriga/nvim-notify"
+  use "folke/lua-dev.nvim"
+  use "kyazdani42/nvim-web-devicons"
 
   -- colorschemes
   use "folke/tokyonight.nvim" -- a nice dark color theme
@@ -80,8 +86,15 @@ return packer.startup(function(use)
   use 'EdenEast/nightfox.nvim'
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "ChristianChiarulli/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
+  use 'romgrk/nvim-treesitter-context'
+  use 'mizlan/iswap.nvim'
 
   -- DAP for debugging
   use "mfussenegger/nvim-dap"
@@ -113,6 +126,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
+  use 'ray-x/lsp_signature.nvim'
   use {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
@@ -140,6 +154,21 @@ return packer.startup(function(use)
   use "windwp/nvim-spectre"
 
   use 'vim-airline/vim-airline' -- for nice status bars
+
+  use 'yuezk/vim-js'
+  use 'maxmellon/vim-jsx-pretty'
+
+  -- syntax highlightign
+  use 'chr4/nginx.vim'
+  use 'leafOfTree/vim-vue-plugin'
+  use 'dart-lang/dart-vim-plugin'
+  use 'natebosch/vim-lsc'
+  use 'natebosch/vim-lsc-dart'
+  use 'adoy/vim-php-refactoring-toolbox'
+  use 'prettier/vim-prettier'
+
+  -- vim-go
+  use 'fatih/vim-go'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
